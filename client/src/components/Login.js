@@ -36,12 +36,14 @@ const Login = () => {
         <input 
           name='username'
           type='text'
+          value={form.username}
           placeholder='Username'
           onChange={handleChange}
         />
         <input 
           name='password'
           type='text'
+          value={form.password}
           placeholder='Password'
           onChange={handleChange}
         />
