@@ -23,7 +23,7 @@ const testData =  [{
 ]
 
 
-test("Fetches data and renders the bubbles", () => {
+test("Fetches data and renders the bubbles", async () => {
   // Finish this test
   mockFetch.mockResolvedValueOnce(testData)
   const { debug, getByText } = render(<BubblePage />);
