@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from 'axios'
 
 import { axiosWithAuth } from './axiosWithAuth'
 
@@ -18,7 +19,8 @@ const Login = () => {
     e.preventDefault()
     axiosWithAuth().post('/api/login', form)
       .then(res => {
-        console.log(res)
+        localStorage.setItem('token', res.data.payload)
+        history.push('/bubblespage')
       })
       .catch(err => console.log(err))
   }
